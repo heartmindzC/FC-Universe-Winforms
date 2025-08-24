@@ -24,13 +24,13 @@ namespace FC_Universe_Winforms
             
             this.FormBorderStyle = FormBorderStyle.None;
             this.DoubleBuffered = true;
-            //this.SetStyle(ControlStyles.UserPaint |
-            //     ControlStyles.AllPaintingInWmPaint |
-            //     ControlStyles.OptimizedDoubleBuffer |
-            //     ControlStyles.SupportsTransparentBackColor, true);
+            this.SetStyle(ControlStyles.UserPaint |
+                 ControlStyles.AllPaintingInWmPaint |
+                 ControlStyles.OptimizedDoubleBuffer |
+                 ControlStyles.SupportsTransparentBackColor, true);
 
             this.BackColor = System.Drawing.Color.FromArgb(23, 21, 32);
-
+            
             this.UpdateStyles();
 
         }

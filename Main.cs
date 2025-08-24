@@ -134,12 +134,7 @@ namespace FC_Universe_Winforms
 
             loadingScreen1.BringToFront();
             loadingScreen1.Refresh();
-            await Task.Run(() =>
-            {
-                // Load dữ liệu, gọi API, khởi tạo control nặng...
-
-                System.Threading.Thread.Sleep(1500); // giả lập
-            });
+           
             loadingScreen1.Hide();
 
             openChildForm(new Settings());

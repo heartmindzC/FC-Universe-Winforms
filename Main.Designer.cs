@@ -71,9 +71,10 @@
             panelGradientNavBar.FillColor3 = Color.Black;
             panelGradientNavBar.FillColor4 = Color.FromArgb(64, 73, 94);
             panelGradientNavBar.Location = new Point(0, 0);
+            panelGradientNavBar.Margin = new Padding(3, 4, 3, 4);
             panelGradientNavBar.Name = "panelGradientNavBar";
             panelGradientNavBar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            panelGradientNavBar.Size = new Size(74, 720);
+            panelGradientNavBar.Size = new Size(85, 960);
             panelGradientNavBar.TabIndex = 0;
             // 
             // panelSelecting
@@ -82,19 +83,21 @@
             panelSelecting.BorderRadius = 8;
             panelSelecting.CustomizableEdges = customizableEdges1;
             panelSelecting.FillColor = Color.FromArgb(232, 186, 59);
-            panelSelecting.Location = new Point(-13, 150);
+            panelSelecting.Location = new Point(-15, 200);
+            panelSelecting.Margin = new Padding(3, 4, 3, 4);
             panelSelecting.Name = "panelSelecting";
             panelSelecting.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            panelSelecting.Size = new Size(19, 46);
+            panelSelecting.Size = new Size(22, 61);
             panelSelecting.TabIndex = 4;
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.logo_bo_tròn;
-            pictureBox1.Location = new Point(8, 48);
+            pictureBox1.Location = new Point(9, 64);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(66, 47);
+            pictureBox1.Size = new Size(75, 63);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
@@ -108,9 +111,10 @@
             btnDownload.IconColor = Color.FromArgb(242, 238, 230);
             btnDownload.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnDownload.IconSize = 42;
-            btnDownload.Location = new Point(12, 243);
+            btnDownload.Location = new Point(14, 324);
+            btnDownload.Margin = new Padding(3, 4, 3, 4);
             btnDownload.Name = "btnDownload";
-            btnDownload.Size = new Size(57, 64);
+            btnDownload.Size = new Size(65, 85);
             btnDownload.TabIndex = 4;
             btnDownload.UseVisualStyleBackColor = false;
             btnDownload.MouseEnter += btnNavBar_MouseEnter;
@@ -125,9 +129,10 @@
             btnNews.IconColor = Color.FromArgb(242, 238, 230);
             btnNews.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnNews.IconSize = 42;
-            btnNews.Location = new Point(12, 457);
+            btnNews.Location = new Point(14, 609);
+            btnNews.Margin = new Padding(3, 4, 3, 4);
             btnNews.Name = "btnNews";
-            btnNews.Size = new Size(57, 64);
+            btnNews.Size = new Size(65, 85);
             btnNews.TabIndex = 3;
             btnNews.UseVisualStyleBackColor = false;
             btnNews.MouseEnter += btnNavBar_MouseEnter;
@@ -142,9 +147,10 @@
             btnQA.IconColor = Color.FromArgb(242, 238, 230);
             btnQA.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnQA.IconSize = 42;
-            btnQA.Location = new Point(12, 352);
+            btnQA.Location = new Point(14, 469);
+            btnQA.Margin = new Padding(3, 4, 3, 4);
             btnQA.Name = "btnQA";
-            btnQA.Size = new Size(57, 64);
+            btnQA.Size = new Size(65, 85);
             btnQA.TabIndex = 2;
             btnQA.UseVisualStyleBackColor = false;
             btnQA.MouseEnter += btnNavBar_MouseEnter;
@@ -159,9 +165,10 @@
             btnSettings.IconColor = Color.FromArgb(242, 238, 230);
             btnSettings.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnSettings.IconSize = 42;
-            btnSettings.Location = new Point(12, 563);
+            btnSettings.Location = new Point(14, 751);
+            btnSettings.Margin = new Padding(3, 4, 3, 4);
             btnSettings.Name = "btnSettings";
-            btnSettings.Size = new Size(57, 64);
+            btnSettings.Size = new Size(65, 85);
             btnSettings.TabIndex = 1;
             btnSettings.UseVisualStyleBackColor = false;
             btnSettings.Click += btnSettings_Click;
@@ -179,9 +186,10 @@
             btnHome.IconColor = Color.FromArgb(232, 186, 59);
             btnHome.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnHome.IconSize = 42;
-            btnHome.Location = new Point(10, 141);
+            btnHome.Location = new Point(11, 188);
+            btnHome.Margin = new Padding(3, 4, 3, 4);
             btnHome.Name = "btnHome";
-            btnHome.Size = new Size(57, 64);
+            btnHome.Size = new Size(65, 85);
             btnHome.TabIndex = 0;
             btnHome.UseVisualStyleBackColor = false;
             btnHome.Click += btnHome_Click;
@@ -204,12 +212,13 @@
             panelGradientBackground.Dock = DockStyle.Right;
             panelGradientBackground.FillColor = Color.FromArgb(29, 30, 36);
             panelGradientBackground.FillColor2 = Color.FromArgb(46, 47, 54);
-            panelGradientBackground.FillColor3 = Color.Black;
-            panelGradientBackground.FillColor4 = Color.FromArgb(90, 58, 40);
-            panelGradientBackground.Location = new Point(73, 0);
+            panelGradientBackground.FillColor3 = Color.FromArgb(46, 47, 54);
+            panelGradientBackground.FillColor4 = Color.FromArgb(46, 47, 54);
+            panelGradientBackground.Location = new Point(84, 0);
+            panelGradientBackground.Margin = new Padding(3, 4, 3, 4);
             panelGradientBackground.Name = "panelGradientBackground";
             panelGradientBackground.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            panelGradientBackground.Size = new Size(1207, 720);
+            panelGradientBackground.Size = new Size(1379, 960);
             panelGradientBackground.TabIndex = 2;
             // 
             // btnClose
@@ -223,9 +232,10 @@
             btnClose.IconColor = Color.White;
             btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnClose.IconSize = 30;
-            btnClose.Location = new Point(1141, 1);
+            btnClose.Location = new Point(1304, 1);
+            btnClose.Margin = new Padding(3, 4, 3, 4);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(75, 47);
+            btnClose.Size = new Size(86, 63);
             btnClose.TabIndex = 4;
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
@@ -234,14 +244,15 @@
             // 
             // Main
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1280, 720);
+            ClientSize = new Size(1463, 960);
             Controls.Add(panelGradientNavBar);
             Controls.Add(panelGradientBackground);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Main";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FC Universe Modding Management";
