@@ -17,7 +17,6 @@ namespace FC_Universe_Winforms
             InitializeComponent();
 
 
-
             // Khởi tạo tất cả các màn hình con một lần
             settings1 = new Settings();
             loadingScreen1 = new LoadingScreen();
