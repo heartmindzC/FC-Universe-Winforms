@@ -11,11 +11,21 @@ using FC_Universe_Winforms.Manager;
 
 namespace FC_Universe_Winforms
 {
-    public partial class Settings : UserControl
+    public partial class Settings : Form
     {
         public Settings()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.DoubleBuffered = true;
+            this.SetStyle(ControlStyles.UserPaint |
+                 ControlStyles.AllPaintingInWmPaint |
+                 ControlStyles.OptimizedDoubleBuffer |
+                 ControlStyles.SupportsTransparentBackColor, true);
+
+            BackColor = Color.Transparent;
+
+            this.UpdateStyles();
             this.DoubleBuffered = true;
             pictureBoxLanguageVN.Visible = false;
             ConfigManager.Load();

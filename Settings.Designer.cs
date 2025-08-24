@@ -55,9 +55,9 @@
             labelTitle.AutoSize = true;
             labelTitle.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTitle.ForeColor = Color.White;
-            labelTitle.Location = new Point(40, 47);
+            labelTitle.Location = new Point(46, 63);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(177, 54);
+            labelTitle.Size = new Size(219, 67);
             labelTitle.TabIndex = 1;
             labelTitle.Text = "Settings";
             // 
@@ -80,14 +80,15 @@
             panelGradientCardTools.FillColor2 = Color.FromArgb(46, 30, 24);
             panelGradientCardTools.FillColor3 = Color.FromArgb(28, 20, 20);
             panelGradientCardTools.FillColor4 = Color.FromArgb(0, 64, 64);
-            panelGradientCardTools.Location = new Point(73, 145);
+            panelGradientCardTools.Location = new Point(83, 193);
+            panelGradientCardTools.Margin = new Padding(3, 4, 3, 4);
             panelGradientCardTools.Name = "panelGradientCardTools";
             panelGradientCardTools.RightToLeft = RightToLeft.No;
             panelGradientCardTools.ShadowDecoration.BorderRadius = 4;
             panelGradientCardTools.ShadowDecoration.CustomizableEdges = customizableEdges4;
             panelGradientCardTools.ShadowDecoration.Depth = 10;
             panelGradientCardTools.ShadowDecoration.Shadow = new Padding(5, 5, 5, 10);
-            panelGradientCardTools.Size = new Size(561, 241);
+            panelGradientCardTools.Size = new Size(641, 321);
             panelGradientCardTools.TabIndex = 4;
             // 
             // labelLanguage
@@ -95,9 +96,9 @@
             labelLanguage.AutoSize = true;
             labelLanguage.Font = new Font("Segoe UI", 10F, FontStyle.Italic);
             labelLanguage.ForeColor = Color.White;
-            labelLanguage.Location = new Point(156, 204);
+            labelLanguage.Location = new Point(178, 272);
             labelLanguage.Name = "labelLanguage";
-            labelLanguage.Size = new Size(54, 19);
+            labelLanguage.Size = new Size(61, 23);
             labelLanguage.TabIndex = 7;
             labelLanguage.Text = "English";
             // 
@@ -106,18 +107,19 @@
             labelCurrentLanguage.AutoSize = true;
             labelCurrentLanguage.Font = new Font("Segoe UI", 10F, FontStyle.Italic);
             labelCurrentLanguage.ForeColor = Color.White;
-            labelCurrentLanguage.Location = new Point(39, 204);
+            labelCurrentLanguage.Location = new Point(45, 272);
             labelCurrentLanguage.Name = "labelCurrentLanguage";
-            labelCurrentLanguage.Size = new Size(122, 19);
+            labelCurrentLanguage.Size = new Size(142, 23);
             labelCurrentLanguage.TabIndex = 6;
             labelCurrentLanguage.Text = "Current language:";
             // 
             // pictureBoxLanguageVN
             // 
             pictureBoxLanguageVN.Image = (Image)resources.GetObject("pictureBoxLanguageVN.Image");
-            pictureBoxLanguageVN.Location = new Point(219, -71);
+            pictureBoxLanguageVN.Location = new Point(250, -95);
+            pictureBoxLanguageVN.Margin = new Padding(3, 4, 3, 4);
             pictureBoxLanguageVN.Name = "pictureBoxLanguageVN";
-            pictureBoxLanguageVN.Size = new Size(439, 371);
+            pictureBoxLanguageVN.Size = new Size(502, 495);
             pictureBoxLanguageVN.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLanguageVN.TabIndex = 5;
             pictureBoxLanguageVN.TabStop = false;
@@ -126,9 +128,10 @@
             // pictureBoxLanguage
             // 
             pictureBoxLanguage.Image = Properties.Resources.closeup_union_jack_flag_copy;
-            pictureBoxLanguage.Location = new Point(219, -12);
+            pictureBoxLanguage.Location = new Point(250, -16);
+            pictureBoxLanguage.Margin = new Padding(3, 4, 3, 4);
             pictureBoxLanguage.Name = "pictureBoxLanguage";
-            pictureBoxLanguage.Size = new Size(396, 263);
+            pictureBoxLanguage.Size = new Size(453, 351);
             pictureBoxLanguage.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLanguage.TabIndex = 4;
             pictureBoxLanguage.TabStop = false;
@@ -145,11 +148,12 @@
             cbLanguage.ForeColor = Color.FromArgb(68, 88, 112);
             cbLanguage.ItemHeight = 30;
             cbLanguage.Items.AddRange(new object[] { "English" });
-            cbLanguage.Location = new Point(39, 154);
+            cbLanguage.Location = new Point(45, 205);
+            cbLanguage.Margin = new Padding(3, 4, 3, 4);
             cbLanguage.MaxDropDownItems = 2;
             cbLanguage.Name = "cbLanguage";
             cbLanguage.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            cbLanguage.Size = new Size(140, 36);
+            cbLanguage.Size = new Size(159, 36);
             cbLanguage.TabIndex = 3;
             cbLanguage.SelectedIndexChanged += cbLanguage_SelectedIndexChanged;
             // 
@@ -158,9 +162,9 @@
             labelDescCard.AutoSize = true;
             labelDescCard.Font = new Font("Segoe UI", 12F);
             labelDescCard.ForeColor = Color.White;
-            labelDescCard.Location = new Point(30, 117);
+            labelDescCard.Location = new Point(34, 156);
             labelDescCard.Name = "labelDescCard";
-            labelDescCard.Size = new Size(194, 21);
+            labelDescCard.Size = new Size(243, 28);
             labelDescCard.TabIndex = 2;
             labelDescCard.Text = "Switching other languages";
             // 
@@ -169,9 +173,9 @@
             labelTitleCard.AutoSize = true;
             labelTitleCard.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             labelTitleCard.ForeColor = Color.White;
-            labelTitleCard.Location = new Point(30, 68);
+            labelTitleCard.Location = new Point(34, 91);
             labelTitleCard.Name = "labelTitleCard";
-            labelTitleCard.Size = new Size(149, 37);
+            labelTitleCard.Size = new Size(184, 46);
             labelTitleCard.TabIndex = 1;
             labelTitleCard.Text = "Language ";
             // 
@@ -180,21 +184,22 @@
             labelTypeCard.AutoSize = true;
             labelTypeCard.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTypeCard.ForeColor = Color.FromArgb(232, 186, 59);
-            labelTypeCard.Location = new Point(30, 25);
+            labelTypeCard.Location = new Point(34, 33);
             labelTypeCard.Name = "labelTypeCard";
-            labelTypeCard.Size = new Size(94, 32);
+            labelTypeCard.Size = new Size(118, 41);
             labelTypeCard.TabIndex = 0;
             labelTypeCard.Text = "System";
             // 
             // Settings
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Transparent;
+            BackColor = Color.Black;
+            ClientSize = new Size(1358, 897);
             Controls.Add(panelGradientCardTools);
             Controls.Add(labelTitle);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Settings";
-            Size = new Size(1206, 720);
             panelGradientCardTools.ResumeLayout(false);
             panelGradientCardTools.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLanguageVN).EndInit();

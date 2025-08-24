@@ -14,8 +14,7 @@ namespace FC_Universe_Winforms
         {
             InitializeComponent();
 
-            panelGradientBackground.Controls.Add(settings1);
-            panelGradientBackground.Controls.Add(loadingScreen1);
+          
 
             settings1.Visible = false;
             settings1.Dock = DockStyle.Left;
@@ -78,9 +77,9 @@ namespace FC_Universe_Winforms
         private async void btnSettings_Click(object sender, EventArgs e)
         {
 
+            
 
 
-           
             loadingScreen1.BringToFront();
             loadingScreen1.Refresh();
             await Task.Run(() =>
@@ -91,7 +90,8 @@ namespace FC_Universe_Winforms
             });
             loadingScreen1.Hide();
 
-            settings1.Show();
+            openChildForm(new Settings());
+            btnClose.BringToFront();
             btnHome.IconColor = Color.FromArgb(242, 238, 230);
             panelSelecting.Location = new Point(panelSelecting.Location.X, btnSettings.Location.Y + 5);
             btnSettings.IconColor = Color.FromArgb(232, 186, 59);
