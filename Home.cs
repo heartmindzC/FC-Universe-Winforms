@@ -24,30 +24,48 @@ namespace FC_Universe_Winforms
             
             this.FormBorderStyle = FormBorderStyle.None;
             this.DoubleBuffered = true;
-            this.SetStyle(ControlStyles.UserPaint |
-                 ControlStyles.AllPaintingInWmPaint |
-                 ControlStyles.OptimizedDoubleBuffer |
-                 ControlStyles.SupportsTransparentBackColor, true);
+            //this.SetStyle(ControlStyles.UserPaint |
+            //     ControlStyles.AllPaintingInWmPaint |
+            //     ControlStyles.OptimizedDoubleBuffer |
+            //     ControlStyles.SupportsTransparentBackColor, true);
 
-            BackColor = Color.Transparent;
+            this.BackColor = System.Drawing.Color.FromArgb(23, 21, 32);
 
             this.UpdateStyles();
 
         }
-        public void InitData()
+        public async Task InitDataAsync()
         {
             this.SuspendLayout();
-            ConfigManager.Load();
-            labelProfileName.Text = GetFC25ProfileName();
-            labelAppliedMod.Text = CountAppliedMods().ToString();
-            string backupFilePath = System.IO.Path.Combine(Application.StartupPath, "runtimes", "win", "lib", "net7.0", "System", "mm", "backup_json_profile", "FIFA Mod Manager.json");
-            if (File.Exists(backupFilePath))
-                labelLastestBackupTime.Text = System.IO.File.GetLastWriteTimeUtc(backupFilePath).ToString("dd/MM/yyyy HH:mm");
-            checkboxOption.Checked = ConfigManager.Config.IsRunOptionEnabled;
-            labelLastestRestore.Text = ConfigManager.Config.LastButtonClick.ToString("dd/MM/yyyy HH:mm");
-            this.ResumeLayout();
+
+            // Sử dụng Task.Run để đưa các tác vụ đọc file nặng ra khỏi UI thread
+            var data = await Task.Run(() => {
+                ConfigManager.Load();
+                string profileName = GetFC25ProfileName();
+                string appliedMods = CountAppliedMods().ToString();
+                string backupTime = "N/A";
+                string backupFilePath = Path.Combine(Application.StartupPath, "runtimes", "win", "lib", "net7.0", "System", "mm", "backup_json_profile", "FIFA Mod Manager.json");
+                if (File.Exists(backupFilePath))
+                {
+                    backupTime = File.GetLastWriteTimeUtc(backupFilePath).ToString("dd/MM/yyyy HH:mm");
+                }
+                bool isOptionEnabled = ConfigManager.Config.IsRunOptionEnabled;
+                string lastRestore = ConfigManager.Config.LastButtonClick.ToString("dd/MM/yyyy HH:mm");
+
+                // Trả về một object chứa tất cả dữ liệu đã tải
+                return new { profileName, appliedMods, backupTime, isOptionEnabled, lastRestore };
+            });
+
+            // Cập nhật các control trên UI thread sau khi đã có dữ liệu
+            labelProfileName.Text = data.profileName;
+            labelAppliedMod.Text = data.appliedMods;
+            labelLastestBackupTime.Text = data.backupTime;
+            checkboxOption.Checked = data.isOptionEnabled;
+            labelLastestRestore.Text = data.lastRestore;
+
+            this.ResumeLayout(true);
         }
-        
+
         private void btnBackupProfile_Click(object sender, EventArgs e)
         {
             // get path file from browse path, then find json file in path browsed

@@ -38,6 +38,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             labelTitle = new Label();
@@ -68,12 +70,18 @@
             guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             pictureBox1 = new PictureBox();
             panelGradientBackground = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             btnClose = new FontAwesome.Sharp.IconButton();
             panelGradientCardTools.SuspendLayout();
+            guna2ShadowPanel1.SuspendLayout();
             guna2CustomGradientPanel1.SuspendLayout();
+            guna2ShadowPanel2.SuspendLayout();
             guna2CustomGradientPanel2.SuspendLayout();
+            guna2ShadowPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelGradientBackground.SuspendLayout();
+            guna2CustomGradientPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // labelTitle
@@ -82,7 +90,7 @@
             labelTitle.BackColor = Color.Transparent;
             labelTitle.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTitle.ForeColor = Color.White;
-            labelTitle.Location = new Point(35, 61);
+            labelTitle.Location = new Point(45, 62);
             labelTitle.Name = "labelTitle";
             labelTitle.Size = new Size(171, 67);
             labelTitle.TabIndex = 2;
@@ -105,7 +113,7 @@
             panelGradientCardTools.FillColor2 = Color.FromArgb(46, 30, 24);
             panelGradientCardTools.FillColor3 = Color.FromArgb(28, 20, 20);
             panelGradientCardTools.FillColor4 = Color.FromArgb(47, 29, 29);
-            panelGradientCardTools.Location = new Point(35, 160);
+            panelGradientCardTools.Location = new Point(9, 0);
             panelGradientCardTools.Margin = new Padding(3, 4, 3, 4);
             panelGradientCardTools.Name = "panelGradientCardTools";
             panelGradientCardTools.RightToLeft = RightToLeft.No;
@@ -130,7 +138,7 @@
             btnOpenMMLocation.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnOpenMMLocation.IconSize = 40;
             btnOpenMMLocation.ImageAlign = ContentAlignment.MiddleLeft;
-            btnOpenMMLocation.Location = new Point(229, 241);
+            btnOpenMMLocation.Location = new Point(193, 241);
             btnOpenMMLocation.Margin = new Padding(3, 4, 3, 4);
             btnOpenMMLocation.Name = "btnOpenMMLocation";
             btnOpenMMLocation.Size = new Size(266, 71);
@@ -222,8 +230,9 @@
             // guna2ShadowPanel1
             // 
             guna2ShadowPanel1.BackColor = Color.Transparent;
+            guna2ShadowPanel1.Controls.Add(panelGradientCardTools);
             guna2ShadowPanel1.FillColor = Color.Transparent;
-            guna2ShadowPanel1.Location = new Point(26, 160);
+            guna2ShadowPanel1.Location = new Point(45, 160);
             guna2ShadowPanel1.Margin = new Padding(3, 4, 3, 4);
             guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             guna2ShadowPanel1.Radius = 10;
@@ -239,7 +248,7 @@
             labelMMConfiguration.BackColor = Color.Transparent;
             labelMMConfiguration.Font = new Font("Segoe UI", 22F);
             labelMMConfiguration.ForeColor = Color.White;
-            labelMMConfiguration.Location = new Point(35, 609);
+            labelMMConfiguration.Location = new Point(45, 609);
             labelMMConfiguration.Name = "labelMMConfiguration";
             labelMMConfiguration.Size = new Size(607, 50);
             labelMMConfiguration.TabIndex = 6;
@@ -263,7 +272,7 @@
             guna2CustomGradientPanel1.FillColor2 = Color.FromArgb(46, 30, 24);
             guna2CustomGradientPanel1.FillColor3 = Color.Transparent;
             guna2CustomGradientPanel1.FillColor4 = Color.Transparent;
-            guna2CustomGradientPanel1.Location = new Point(35, 681);
+            guna2CustomGradientPanel1.Location = new Point(9, 0);
             guna2CustomGradientPanel1.Margin = new Padding(3, 4, 3, 4);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.RightToLeft = RightToLeft.No;
@@ -381,8 +390,9 @@
             // guna2ShadowPanel2
             // 
             guna2ShadowPanel2.BackColor = Color.Transparent;
+            guna2ShadowPanel2.Controls.Add(guna2CustomGradientPanel1);
             guna2ShadowPanel2.FillColor = Color.Transparent;
-            guna2ShadowPanel2.Location = new Point(26, 681);
+            guna2ShadowPanel2.Location = new Point(45, 681);
             guna2ShadowPanel2.Margin = new Padding(3, 4, 3, 4);
             guna2ShadowPanel2.Name = "guna2ShadowPanel2";
             guna2ShadowPanel2.Radius = 10;
@@ -408,7 +418,7 @@
             guna2CustomGradientPanel2.FillColor2 = Color.FromArgb(46, 30, 24);
             guna2CustomGradientPanel2.FillColor3 = Color.Transparent;
             guna2CustomGradientPanel2.FillColor4 = Color.Transparent;
-            guna2CustomGradientPanel2.Location = new Point(736, 609);
+            guna2CustomGradientPanel2.Location = new Point(13, 4);
             guna2CustomGradientPanel2.Margin = new Padding(3, 4, 3, 4);
             guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
             guna2CustomGradientPanel2.RightToLeft = RightToLeft.No;
@@ -504,8 +514,9 @@
             // guna2ShadowPanel3
             // 
             guna2ShadowPanel3.BackColor = Color.Transparent;
+            guna2ShadowPanel3.Controls.Add(guna2CustomGradientPanel2);
             guna2ShadowPanel3.FillColor = Color.Transparent;
-            guna2ShadowPanel3.Location = new Point(727, 609);
+            guna2ShadowPanel3.Location = new Point(742, 609);
             guna2ShadowPanel3.Margin = new Padding(3, 4, 3, 4);
             guna2ShadowPanel3.Name = "guna2ShadowPanel3";
             guna2ShadowPanel3.Radius = 10;
@@ -519,7 +530,7 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.Torres_2008_2_copy1;
-            pictureBox1.Location = new Point(438, -211);
+            pictureBox1.Location = new Point(449, -208);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1086, 1259);
@@ -530,8 +541,9 @@
             // panelGradientBackground
             // 
             panelGradientBackground.BorderColor = Color.FromArgb(55, 55, 55);
+            panelGradientBackground.Controls.Add(guna2CustomGradientPanel3);
             panelGradientBackground.Controls.Add(btnClose);
-            panelGradientBackground.CustomizableEdges = customizableEdges11;
+            panelGradientBackground.CustomizableEdges = customizableEdges13;
             panelGradientBackground.Dock = DockStyle.Right;
             panelGradientBackground.FillColor = Color.FromArgb(29, 30, 36);
             panelGradientBackground.FillColor2 = Color.FromArgb(46, 47, 54);
@@ -540,9 +552,50 @@
             panelGradientBackground.Location = new Point(-19, 0);
             panelGradientBackground.Margin = new Padding(3, 4, 3, 4);
             panelGradientBackground.Name = "panelGradientBackground";
-            panelGradientBackground.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            panelGradientBackground.ShadowDecoration.CustomizableEdges = customizableEdges14;
             panelGradientBackground.Size = new Size(1379, 1055);
             panelGradientBackground.TabIndex = 14;
+            // 
+            // guna2CustomGradientPanel3
+            // 
+            guna2CustomGradientPanel3.BorderColor = Color.FromArgb(55, 55, 55);
+            guna2CustomGradientPanel3.Controls.Add(guna2ShadowPanel2);
+            guna2CustomGradientPanel3.Controls.Add(guna2ShadowPanel1);
+            guna2CustomGradientPanel3.Controls.Add(iconButton1);
+            guna2CustomGradientPanel3.Controls.Add(guna2ShadowPanel3);
+            guna2CustomGradientPanel3.Controls.Add(labelMMConfiguration);
+            guna2CustomGradientPanel3.Controls.Add(labelTitle);
+            guna2CustomGradientPanel3.Controls.Add(pictureBox1);
+            guna2CustomGradientPanel3.CustomizableEdges = customizableEdges11;
+            guna2CustomGradientPanel3.Dock = DockStyle.Right;
+            guna2CustomGradientPanel3.FillColor = Color.FromArgb(29, 30, 36);
+            guna2CustomGradientPanel3.FillColor2 = Color.FromArgb(46, 47, 54);
+            guna2CustomGradientPanel3.FillColor3 = Color.Black;
+            guna2CustomGradientPanel3.FillColor4 = Color.FromArgb(90, 58, 40);
+            guna2CustomGradientPanel3.Location = new Point(0, 0);
+            guna2CustomGradientPanel3.Margin = new Padding(3, 4, 3, 4);
+            guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
+            guna2CustomGradientPanel3.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2CustomGradientPanel3.Size = new Size(1379, 1055);
+            guna2CustomGradientPanel3.TabIndex = 5;
+            // 
+            // iconButton1
+            // 
+            iconButton1.BackColor = Color.Transparent;
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            iconButton1.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.X;
+            iconButton1.IconColor = Color.White;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 30;
+            iconButton1.Location = new Point(1304, 1);
+            iconButton1.Margin = new Padding(3, 4, 3, 4);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(86, 63);
+            iconButton1.TabIndex = 4;
+            iconButton1.UseVisualStyleBackColor = false;
             // 
             // btnClose
             // 
@@ -568,29 +621,24 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1360, 1055);
-            Controls.Add(guna2CustomGradientPanel2);
-            Controls.Add(guna2ShadowPanel3);
-            Controls.Add(guna2CustomGradientPanel1);
-            Controls.Add(guna2ShadowPanel2);
-            Controls.Add(labelMMConfiguration);
-            Controls.Add(panelGradientCardTools);
-            Controls.Add(labelTitle);
-            Controls.Add(guna2ShadowPanel1);
-            Controls.Add(pictureBox1);
             Controls.Add(panelGradientBackground);
             DoubleBuffered = true;
             Margin = new Padding(3, 4, 3, 4);
             Name = "Home";
             panelGradientCardTools.ResumeLayout(false);
             panelGradientCardTools.PerformLayout();
+            guna2ShadowPanel1.ResumeLayout(false);
             guna2CustomGradientPanel1.ResumeLayout(false);
             guna2CustomGradientPanel1.PerformLayout();
+            guna2ShadowPanel2.ResumeLayout(false);
             guna2CustomGradientPanel2.ResumeLayout(false);
             guna2CustomGradientPanel2.PerformLayout();
+            guna2ShadowPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelGradientBackground.ResumeLayout(false);
+            guna2CustomGradientPanel3.ResumeLayout(false);
+            guna2CustomGradientPanel3.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
 
@@ -625,5 +673,7 @@
         private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panelGradientBackground;
         private FontAwesome.Sharp.IconButton btnClose;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

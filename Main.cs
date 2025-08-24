@@ -8,41 +8,93 @@ namespace FC_Universe_Winforms
 {
     public partial class Main : Form
     {
-        Settings settings1 = new Settings();
-        LoadingScreen loadingScreen1 = new LoadingScreen();
+        private Settings settings1;
+        private LoadingScreen loadingScreen1;
+        private Home home;
+        private bool isHomeDataLoaded = false;
         public Main()
         {
             InitializeComponent();
 
-          
 
+
+            // Khởi tạo tất cả các màn hình con một lần
+            settings1 = new Settings();
+            loadingScreen1 = new LoadingScreen();
+            home = new Home();
+
+            // **PHẦN CẬP NHẬT QUAN TRỌNG**
+            // Cấu hình các Form để có thể thêm vào Panel.
+            // Đặt TopLevel = false để Form có thể hoạt động như một control con.
+            settings1.TopLevel = false;
+            settings1.FormBorderStyle = FormBorderStyle.None;
+
+            loadingScreen1.TopLevel = false;
+            loadingScreen1.FormBorderStyle = FormBorderStyle.None;
+
+            home.TopLevel = false;
+            home.FormBorderStyle = FormBorderStyle.None;
+
+            // Thêm tất cả vào panel chính
+            panelGradientBackground.Controls.Add(settings1);
+            panelGradientBackground.Controls.Add(loadingScreen1);
+            panelGradientBackground.Controls.Add(home);
+
+            // Cấu hình thuộc tính Dock và Visible cho từng màn hình
+            settings1.Dock = DockStyle.Fill;
             settings1.Visible = false;
-            settings1.Dock = DockStyle.Left;
-            settings1.Width = 1207;
-            loadingScreen1.Dock = DockStyle.Left;
-            loadingScreen1.Width = 1207;
 
-            // Ban đầu chỉ hiển thị loading
+            loadingScreen1.Dock = DockStyle.Fill;
+            loadingScreen1.Visible = true; // Bắt đầu với màn hình loading
 
+            home.Dock = DockStyle.Fill;
+            home.Visible = false;
+
+            // Cấu hình giao diện ban đầu
             btnClose.BringToFront();
             panelSelecting.Location = new Point(panelSelecting.Location.X, btnHome.Location.Y + 5);
             btnHome.IconColor = Color.FromArgb(232, 186, 59);
 
-            // Timer để delay 3s rồi chuyển qua home2
-            
+            // Timer để hiển thị màn hình Home sau khi loading ban đầu
             timer1.Interval = 3000; // 3 giây
-            timer1.Tick += (s, e) =>
+            timer1.Tick += async (s, e) =>
             {
                 timer1.Stop();
-                loadingScreen1.Visible = false;
-                settings1.Visible = false;
-                btnClose.BringToFront();
-
+                await ShowHomeForm(); // Gọi hàm để hiển thị Home
             };
             timer1.Start();
 
         }
-   
+
+        private async Task ShowHomeForm()
+        {
+            // 1. Ẩn các màn hình khác và hiển thị loading để người dùng biết có tác vụ đang chạy
+            settings1.Visible = false;
+            home.Visible = false;
+            loadingScreen1.Visible = true;
+            loadingScreen1.BringToFront();
+            btnClose.BringToFront();
+
+            // 2. Chỉ tải dữ liệu NẾU chưa được tải trước đó (tối ưu hiệu năng)
+            if (!isHomeDataLoaded)
+            {
+                // Gọi hàm bất đồng bộ InitDataAsync() từ form Home.cs
+                // Giao diện sẽ không bị "đơ" trong lúc chờ
+                await home.InitDataAsync();
+                isHomeDataLoaded = true; // Đánh dấu là đã tải xong
+            }
+
+            // 3. Sau khi tải xong, ẩn loading và hiển thị màn hình Home
+            home.Visible = true;
+            home.BringToFront();
+            loadingScreen1.Visible = false;
+            btnClose.BringToFront();
+
+            // 4. Cập nhật lại giao diện của thanh điều hướng (navigation bar)
+            btnSettings.IconColor = Color.FromArgb(242, 238, 230);
+            panelSelecting.Location = new Point(panelSelecting.Location.X, btnHome.Location.Y + 5);
+            btnHome.IconColor = Color.FromArgb(232, 186, 59);
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -119,12 +171,7 @@ namespace FC_Universe_Winforms
         private async void btnHome_Click(object sender, EventArgs e)
         {
 
-            openChildForm(new Home());
-            settings1.Hide();
-            btnClose.BringToFront();
-            btnSettings.IconColor = Color.FromArgb(242, 238, 230);
-            panelSelecting.Location = new Point(panelSelecting.Location.X, btnHome.Location.Y + 5);
-            btnHome.IconColor = Color.FromArgb(232, 186, 59);
+            await ShowHomeForm();
 
 
             //loadingScreen1.Visible = true;
